@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Typing Animation</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: "Arial", sans-serif;
+      background-color: #f5f5f5;
+    }
+
+    .typing-text {
+      font-size: 20px;
+      text-align: center;
+      white-space: pre-line;
+      opacity: 0;
+      font-family: "Verdana", sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <div class="typing-text"></div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var typingText = document.querySelector(".typing-text");
+
+      function typeText(text, delay) {
+        var currentIndex = 0;
+
+        function type() {
+          typingText.textContent += text[currentIndex];
+
+          if (++currentIndex < text.length) {
+            setTimeout(type, delay);
+          } else {
+            setTimeout(function() {
+              typingText.style.opacity = 0;
+            }, 3000);
+          }
+        }
+
+        type();
+      }
+
+      typeText("✨️To My Dearest DiDi✨️\n\n💕Words cannot express how grateful I am to have you in my life💕. While we may not be bound by blood, the connection we share goes beyond any familial ties. You are not just a friend, but a sister to me, and I want to take a moment to express my love and appreciation for everything you bring into my world.\n\nFrom the moment we first met, there was an instant bond that I couldn't ignore. We laughed, we cried, and we created countless memories that will forever hold a special place in my heart. You have been there for me through the ups and downs, offering unwavering support, and providing a shoulder to lean on when I needed it the most.\n\nYour presence in my life has brought so much joy, warmth, and light. You have this incredible ability to lift my spirits, even on the gloomiest of days. Your infectious laughter, your kindness, and your genuine nature have a way of making everything better. With you, I feel safe, understood, and completely accepted for who I am.\n\n❤️We weren't bound by blood or obligation, but rather by a deep sense of friendship and love❤️. You have shown me that family isn't just about shared genes, but about the people who stand by your side, through thick and thin. In you, I have found a sister who understands me like no one else does, who knows my quirks, my dreams, and my fears.\n\nThank you for being there during the highs and lows of life, for celebrating my victories as if they were your own, and for offering a comforting presence during my darkest hours. Your unwavering support has given me the strength to face challenges head-on and the courage to pursue my dreams fearlessly.\n\n💗I am truly blessed to have you in my life, and I cherish every moment we spend together💗.\n\nAs I pen down these words, my heart overflows with gratitude for the love, friendship, and sisterhood we share. I want you to know that you are not just my best sister but a truly remarkable person who has made an indelible mark on my life. I am eternally grateful for your presence, and I promise to always be there for you, just as you have been for me.\n\n💖From Your Brother💖", 50);
+      typingText.style.opacity = 1;
+    });
+  </script>
+</body>
+</html>
